@@ -43,7 +43,7 @@ class OpperSlider extends StatefulWidget {
 class _OpperSliderState extends State<OpperSlider> {
   double position = 0.0; // Add this line
   double thumbSize = 26.0;
-  double trackHeight = 5.0;
+  double trackHeight = 2.0;
   Color thumbColor = OpperColors.seedColor;
   Color rightTrackColor = OpperColors.purple;
   Color leftTrackColor = OpperColors.seedColor;
