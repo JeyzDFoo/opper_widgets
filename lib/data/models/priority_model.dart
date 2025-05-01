@@ -6,7 +6,7 @@ class Priority {
   double? impact;
   double? effort;
   double? urgency;
-  final OpperUser user;
+  OpperUser user;
 
   Priority({
     required this.user,
