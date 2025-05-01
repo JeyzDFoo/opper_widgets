@@ -1,0 +1,13 @@
+name: opper_submodule
+version: 0.0.1
+description: A submodule for Opper project containing reusable components.
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
