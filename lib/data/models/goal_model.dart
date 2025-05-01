@@ -24,8 +24,8 @@ class GoalModel {
   List<String>? boardIds;
   List<String>? memberIds;
   List<OpperUser>? members;
-  List<Priority>? priorities;
-  Priority? priority;
+  List<OpperPriority>? priorities;
+  OpperPriority? priority;
 
   GoalModel({
     String? uid,
@@ -96,7 +96,7 @@ class GoalModel {
         memberIds = (json['memberIds'] as List<dynamic>?)?.cast<String>(),
         members = mapMembers(json['members']),
         priority = json['priority'] != null
-            ? Priority.fromJson(json['priority'])
+            ? OpperPriority.fromJson(json['priority'])
             : null;
 
   Map<String, dynamic> toJson(OpperUser user) => {

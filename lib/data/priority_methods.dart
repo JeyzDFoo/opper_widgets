@@ -1,7 +1,7 @@
 import 'package:opper_submodule/data/models/priority_model.dart';
 import 'package:opper_submodule/data/models/user.dart';
 
-updatePriorities(List<Priority>? priorities, Priority? priority) {
+updatePriorities(List<OpperPriority>? priorities, OpperPriority? priority) {
   if (priorities == null) {
     priorities = [];
   }
@@ -11,7 +11,8 @@ updatePriorities(List<Priority>? priorities, Priority? priority) {
   return priorities;
 }
 
-Priority? getLocalPriority(List<Priority> priorities, OpperUser localUser) {
+OpperPriority? getLocalPriority(
+    List<OpperPriority> priorities, OpperUser localUser) {
   for (var priority in priorities) {
     if (priority.user.uid == localUser.uid) {
       return priority;

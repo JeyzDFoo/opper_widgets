@@ -6,7 +6,7 @@ class MilestoneModel with ChangeNotifier {
   String? uid;
   String? name;
   String? description;
-  List<Priority>? priorities;
+  List<OpperPriority>? priorities;
   List<String>? parentIds;
   List<String>? childIds;
   List<String>? goalIds;
@@ -61,7 +61,7 @@ class MilestoneModel with ChangeNotifier {
           ? DateTime.parse(json['distributedDate'])
           : null,
       priorities: (json['priorities'] as List<dynamic>?)
-          ?.map((p) => Priority.fromJson(p))
+          ?.map((p) => OpperPriority.fromJson(p))
           .toList(),
       parentIds: (json['parentIds'] as List<dynamic>?)?.cast<String>(),
       childIds: (json['childIds'] as List<dynamic>?)?.cast<String>(),

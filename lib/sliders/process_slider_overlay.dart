@@ -7,10 +7,10 @@ import 'package:opper_submodule/opper_slider.dart';
 
 //overlayType should be "impact", "effort", or "urgency"
 List<SliderOverlayData> getOverlaydata(
-    List<Priority> priorities, OpperUser localUser, String overlayType) {
+    List<OpperPriority> priorities, OpperUser localUser, String overlayType) {
   List<SliderOverlayData> overlayValues = [];
   //remove localUser from list by localUser.uid
-  List<Priority> overlayPriorities =
+  List<OpperPriority> overlayPriorities =
       priorities.where((element) => element.user.uid != localUser.uid).toList();
 
   for (int i = 0; i < overlayPriorities.length; i++) {

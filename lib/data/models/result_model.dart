@@ -9,8 +9,8 @@ class KeyResultModel with ChangeNotifier {
   String? uid;
   String? name;
   String? description;
-  Priority? priority;
-  List<Priority>? priorities;
+  OpperPriority? priority;
+  List<OpperPriority>? priorities;
   List<String>? parentIds;
   List<String>? childIds;
   DateTime? endDate; // Optional end date
@@ -58,13 +58,13 @@ class KeyResultModel with ChangeNotifier {
       description: json['description'],
       priority: getLocalPriority(
         (json['priorities'] as List<dynamic>?)
-                ?.map((p) => Priority.fromJson(p))
+                ?.map((p) => OpperPriority.fromJson(p))
                 .toList() ??
             [],
         localUser,
       ),
       priorities: (json['priorities'] as List<dynamic>?)
-          ?.map((p) => Priority.fromJson(p))
+          ?.map((p) => OpperPriority.fromJson(p))
           .toList(),
       parentIds: (json['parentIds'] as List<dynamic>?)?.cast<String>(),
       childIds: (json['childIds'] as List<dynamic>?)?.cast<String>(),

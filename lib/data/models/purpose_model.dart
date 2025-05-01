@@ -6,7 +6,7 @@ class PurposeModel with ChangeNotifier {
   String? uid;
   String? name;
   String? description;
-  List<Priority>? priorities;
+  List<OpperPriority>? priorities;
   List<String>? parentIds;
   List<String>? childIds;
 
@@ -41,7 +41,7 @@ class PurposeModel with ChangeNotifier {
       name: json['name'],
       description: json['description'],
       priorities: (json['priorities'] as List<dynamic>?)
-          ?.map((p) => Priority.fromJson(p))
+          ?.map((p) => OpperPriority.fromJson(p))
           .toList(),
       parentIds: (json['parentIds'] as List<dynamic>?)?.cast<String>(),
       childIds: (json['childIds'] as List<dynamic>?)?.cast<String>(),

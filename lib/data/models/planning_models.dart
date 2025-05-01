@@ -29,8 +29,8 @@ class Block {
   final String? uuid;
   final OpperUser originator;
   final OpperUser localUser;
-  Priority? priority;
-  List<Priority>? priorities;
+  OpperPriority? priority;
+  List<OpperPriority>? priorities;
   int blockNumber;
   String? hash;
   String? previousHash;
@@ -80,9 +80,9 @@ class Block {
   }
 
   factory Block.fromJson(Map<String, dynamic> json, OpperUser localUser) {
-    List<Priority> _priorities = json['priorities'] != null
-        ? List<Priority>.from(
-            json['priorities'].map((e) => Priority.fromJson(e)))
+    List<OpperPriority> _priorities = json['priorities'] != null
+        ? List<OpperPriority>.from(
+            json['priorities'].map((e) => OpperPriority.fromJson(e)))
         : [];
 
     return Block(

@@ -1,14 +1,13 @@
 import 'dart:math';
+import 'user.dart';
 
-import 'package:opper_submodule/data/models/user.dart';
-
-class Priority {
+class OpperPriority {
   double? impact;
   double? effort;
   double? urgency;
   OpperUser user;
 
-  Priority({
+  OpperPriority({
     required this.user,
     this.impact,
     this.effort,
@@ -41,8 +40,8 @@ class Priority {
   }
 
   // Add fromJson method
-  factory Priority.fromJson(Map<String, dynamic> json) {
-    return Priority(
+  factory OpperPriority.fromJson(Map<String, dynamic> json) {
+    return OpperPriority(
       impact: json['impact'],
       effort: json['effort'],
       urgency: json['urgency'],

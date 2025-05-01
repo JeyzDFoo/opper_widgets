@@ -14,8 +14,8 @@ class Task {
   DateTime? dueDate;
   final GlobalData? globalData;
   final String parentId;
-  Priority? priority;
-  List<Priority>? priorities;
+  OpperPriority? priority;
+  List<OpperPriority>? priorities;
   bool isComplete;
   bool isCleared;
   bool isDeleted;
@@ -26,7 +26,7 @@ class Task {
       {required this.title,
       required this.parentId,
       this.priority,
-      List<Priority>? priorities,
+      List<OpperPriority>? priorities,
       this.isCleared = false,
       this.isDeleted = false,
       this.goalIds,
@@ -51,7 +51,7 @@ class Task {
         priorities = (json['priorities'] == null)
             ? []
             : json['priorities']
-                .map<Priority>((e) => Priority.fromJson(e))
+                .map<OpperPriority>((e) => OpperPriority.fromJson(e))
                 .toList(),
         description = json['description'],
         goalIds = (json['goalIds'] == null)
@@ -90,7 +90,7 @@ class Task {
 }
 
 class GlobalData {
-  List<Priority> priorities = [];
+  List<OpperPriority> priorities = [];
 }
 
 _getLocalPriority(priorities, OpperUser user, dueDate) {
@@ -98,18 +98,18 @@ _getLocalPriority(priorities, OpperUser user, dueDate) {
     dueDate = DateTime.tryParse(dueDate) ?? DateTime.parse(dueDate);
   }
 
-  Priority localPriority = Priority(user: user);
+  OpperPriority localPriority = OpperPriority(user: user);
 
   if (priorities == null || priorities.isEmpty) {
     print("priorities is null or empty");
-    return Priority(user: user);
+    return OpperPriority(user: user);
   }
 
-  priorities = priorities.map((e) => Priority.fromJson(e)).toList();
+  priorities = priorities.map((e) => OpperPriority.fromJson(e)).toList();
 
   localPriority = priorities.firstWhere(
     (element) => element.user.uid == user.uid,
-    orElse: () => Priority(user: user),
+    orElse: () => OpperPriority(user: user),
   );
 
   if (dueDate != null) {
@@ -124,7 +124,7 @@ _getLocalPriority(priorities, OpperUser user, dueDate) {
 }
 
 _mapLocalPriority(
-    List<Priority> priorities, Priority? priority, OpperUser user) {
+    List<OpperPriority> priorities, OpperPriority? priority, OpperUser user) {
   if (priority == null) {
     return priorities.map((e) => e.toJson()).toList();
   }

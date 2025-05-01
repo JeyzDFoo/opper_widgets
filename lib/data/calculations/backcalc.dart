@@ -11,8 +11,8 @@ double calcPriority(double i, double e, double u) {
   }
 }
 
-Priority backCalculate(
-    double target, Priority originalPriority, bool holdUrgency) {
+OpperPriority backCalculate(
+    double target, OpperPriority originalPriority, bool holdUrgency) {
   double impact = originalPriority.impact ?? 0;
   double effort = originalPriority.effort ?? 0;
   double urgency = originalPriority.urgency ?? 0;
@@ -74,7 +74,7 @@ Priority backCalculate(
   // print('Target priority: $target');
 //  print('Final priority: $currentPriority');
 
-  return Priority(
+  return OpperPriority(
       user: originalPriority.user,
       impact: impact,
       effort: effort,

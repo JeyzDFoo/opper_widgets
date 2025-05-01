@@ -3,7 +3,7 @@ import 'package:opper_submodule/data/models/priority_model.dart';
 import 'package:opper_submodule/opper_slider.dart';
 
 class ImpactSlider extends StatefulWidget {
-  final Priority? priority;
+  final OpperPriority? priority;
   const ImpactSlider({super.key, this.priority});
 
   @override
