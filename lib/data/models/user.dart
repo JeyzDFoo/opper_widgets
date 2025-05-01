@@ -1,5 +1,3 @@
-//.import 'package:cloud_firestore/cloud_firestore.dart';
-
 class OpperUser {
   String uid;
   String? email;
@@ -46,7 +44,7 @@ class OpperUser {
   }
 
   factory OpperUser.fromJson(Map<String, dynamic> json) {
-    DateTime? _parseDate(dynamic date) {
+    DateTime? parseDate(dynamic date) {
       if (date is DateTime) {
         return date;
       } else if (date is String) {
@@ -63,9 +61,9 @@ class OpperUser {
       email: json['email'],
       displayName: json['displayName'],
       timezone: json['timezone'],
-      created: _parseDate(json['created']) ?? DateTime.now(),
-      added: _parseDate(json['added']) ?? DateTime.now(),
-      updated: _parseDate(json['updated']) ?? DateTime.now(),
+      created: parseDate(json['created']) ?? DateTime.now(),
+      added: parseDate(json['added']) ?? DateTime.now(),
+      updated: parseDate(json['updated']) ?? DateTime.now(),
       tokens: json['tokens'],
       completedOnboarding: json['completedOnboarding'],
     );
