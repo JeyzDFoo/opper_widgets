@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:opper/data/models/user.dart';
+import 'package:opper_submodule/data/models/user.dart';
 
 class Priority {
   double? impact;

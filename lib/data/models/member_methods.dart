@@ -1,4 +1,4 @@
-import 'package:opper/data/models/user.dart';
+import 'package:opper_submodule/data/models/user.dart';
 
 mapMembers(List<dynamic>? members) {
   if (members == null) {

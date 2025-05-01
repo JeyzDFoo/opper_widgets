@@ -1,6 +1,6 @@
-import 'package:opper/data/models/member_methods.dart';
+import 'package:opper_submodule/data/models/member_methods.dart';
+import 'package:opper_submodule/data/models/user.dart';
 import 'package:uuid/uuid.dart';
-import 'package:opper/data/models/user.dart';
 
 class EntityModel {
   String? uid;

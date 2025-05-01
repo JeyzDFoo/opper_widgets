@@ -1,5 +1,8 @@
 import 'dart:core';
 
+import 'package:opper_submodule/data/models/priority_model.dart';
+import 'package:opper_submodule/data/models/user.dart';
+import 'package:opper_submodule/design/opper_colors.dart';
 import 'package:opper_submodule/opper_slider.dart';
 
 //overlayType should be "impact", "effort", or "urgency"

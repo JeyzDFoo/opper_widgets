@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:opper_submodule/opper_colors.dart';
+import 'package:opper_submodule/design/opper_colors.dart';
 
 class SliderOverlayData {
   final double value;

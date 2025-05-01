@@ -1,4 +1,6 @@
 import 'package:opper_submodule/data/models/user.dart';
+import 'package:opper_submodule/design/pallet_colors.dart';
+import 'package:uuid/uuid.dart';
 
 class Board {
   final String? uuid;

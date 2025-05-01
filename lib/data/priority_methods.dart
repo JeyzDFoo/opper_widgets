@@ -1,5 +1,5 @@
-import 'package:opper/data/models/user.dart';
-import 'package:opper/data/models/priority_model.dart';
+import 'package:opper_submodule/data/models/priority_model.dart';
+import 'package:opper_submodule/data/models/user.dart';
 
 updatePriorities(List<Priority>? priorities, Priority? priority) {
   if (priorities == null) {

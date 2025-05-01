@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:opper/data/data_parsing.dart';
-import 'package:opper/data/models/priority_model.dart';
-import 'package:opper/data/models/user.dart';
+import 'package:opper_submodule/data/models/priority_model.dart';
+import 'package:opper_submodule/data/models/user.dart';
+import 'package:opper_submodule/data/priority_methods.dart';
 import 'package:uuid/uuid.dart'; // Import uuid package
 
 class KeyResultModel with ChangeNotifier {

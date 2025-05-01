@@ -1,13 +1,13 @@
-import 'package:opper/data/data_parsing.dart';
-import 'package:opper/data/models/delegate_model.dart';
-import 'package:opper/data/models/entity_model.dart';
-import 'package:opper/data/models/member_methods.dart';
-import 'package:opper/data/models/milestone_model.dart';
-import 'package:opper/data/models/objective_model.dart';
-import 'package:opper/data/models/priority_model.dart';
-import 'package:opper/data/models/purpose_model.dart';
-import 'package:opper/data/models/result_model.dart';
-import 'package:opper/data/models/user.dart';
+import 'package:opper_submodule/data/models/delegate_model.dart';
+import 'package:opper_submodule/data/models/entity_model.dart';
+import 'package:opper_submodule/data/models/member_methods.dart';
+import 'package:opper_submodule/data/models/milestone_model.dart';
+import 'package:opper_submodule/data/models/objective_model.dart';
+import 'package:opper_submodule/data/models/priority_model.dart';
+import 'package:opper_submodule/data/models/purpose_model.dart';
+import 'package:opper_submodule/data/models/result_model.dart';
+import 'package:opper_submodule/data/models/user.dart';
+import 'package:opper_submodule/data/priority_methods.dart';
 import 'package:uuid/uuid.dart';
 
 class GoalModel {

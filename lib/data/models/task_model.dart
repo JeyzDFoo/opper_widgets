@@ -1,5 +1,8 @@
+import 'package:opper_submodule/data/calculations/time_calcs.dart';
 import 'package:opper_submodule/data/models/priority_model.dart';
 import 'package:opper_submodule/data/models/recurring.dart';
+import 'package:opper_submodule/data/models/user.dart';
+import 'package:uuid/uuid.dart';
 
 class Task {
   final String? uuid;
@@ -145,8 +148,12 @@ DateTime? _parseDate(dynamic date) {
   if (date == null) return null;
   if (date is String) {
     return DateTime.tryParse(date) ?? DateTime.parse(date);
-  } else if (date is Timestamp) {
-    return date.toDate(); // Convert Timestamp to DateTime
+  } else {
+    try {
+      return DateTime.fromMillisecondsSinceEpoch(date);
+    } catch (e) {
+      print("Error parsing date in Task Model: $e");
+    }
   }
   throw TypeError(); // Handle unexpected types
 }

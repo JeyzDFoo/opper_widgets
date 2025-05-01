@@ -1,5 +1,5 @@
-import 'package:opper/data/models/entity_model.dart';
-import 'package:opper/data/models/user.dart';
+import 'package:opper_submodule/data/models/entity_model.dart';
+import 'package:opper_submodule/data/models/user.dart';
 import 'package:uuid/uuid.dart'; // Added import for Uuid
 
 class DelegateModel {

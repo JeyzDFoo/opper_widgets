@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:opper/data/models/priority_model.dart';
+import 'package:opper_submodule/data/models/priority_model.dart';
 import 'package:uuid/uuid.dart'; // Import uuid package
 
 class MilestoneModel with ChangeNotifier {
