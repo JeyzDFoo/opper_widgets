@@ -42,10 +42,11 @@ class OpperSlider extends StatefulWidget {
 
 class _OpperSliderState extends State<OpperSlider> {
   double position = 0.0; // Add this line
-  double thumbSize = 30.0;
+  double thumbSize = 26.0;
   double trackHeight = 5.0;
   Color thumbColor = OpperColors.seedColor;
-  Color trackColor = OpperColors.purple.withAlpha(120);
+  Color rightTrackColor = OpperColors.purple;
+  Color leftTrackColor = OpperColors.seedColor;
   double sliderValue = 0.0;
   double minValue = 0.0;
   double maxValue = 100.0;
@@ -56,7 +57,7 @@ class _OpperSliderState extends State<OpperSlider> {
   bool showLabel = false;
   bool hasMoved = false;
 
-  Color unmovedColor = OpperColors.unselected;
+  Color unmovedColor = OpperColors.seedColor;
 
   @override
   void initState() {
@@ -122,10 +123,10 @@ class _OpperSliderState extends State<OpperSlider> {
           } else {
             sliderLabelText = (sliderValue * 0.1).toStringAsFixed(1);
           }
-
+          // right side track
           return Stack(
             children: [
-              //track
+              // Full Track (right side)
               Positioned(
                 top: (constraints.maxHeight) / 2, // Center vertically
                 child: GestureDetector(
@@ -176,12 +177,25 @@ class _OpperSliderState extends State<OpperSlider> {
                     height: thumbSize,
                     width: constraints.maxWidth, // Use the width of the parent
                     child: CustomPaint(
-                      painter:
-                          _Track(color: trackColor, trackSize: trackHeight),
+                      painter: _Track(
+                          color: rightTrackColor, trackSize: trackHeight),
                     ),
                   ),
                 ),
               ),
+              Positioned(
+                top: (constraints.maxHeight) / 2, // Center vertically
+                child: SizedBox(
+                  height: thumbSize,
+                  width: position, // Use the width of the parent
+                  child: CustomPaint(
+                    painter:
+                        _Track(color: leftTrackColor, trackSize: trackHeight),
+                  ),
+                ),
+              ),
+
+              //OverLay Values
               if (widget.overlayValues != null && widget.showOverlay == true)
                 for (var otherValue in widget.overlayValues!)
                   Positioned(
@@ -206,6 +220,7 @@ class _OpperSliderState extends State<OpperSlider> {
                           ),
                           color: AlignColors.getColorByIndex(
                               widget.overlayValues!.indexOf(otherValue)))),
+              // Thumb Knob
               Positioned(
                 left: position,
                 top: (constraints.maxHeight) / 2, // Center vertically
@@ -244,11 +259,11 @@ class _OpperSliderState extends State<OpperSlider> {
                     height: thumbSize, // Set the desired height
                     decoration: BoxDecoration(
                       boxShadow: [
-                        // BoxShadow(
-                        //   color: seedColor,
-                        //   blurRadius: 6.0,
-                        //   spreadRadius: 0.0,
-                        // ),
+                        BoxShadow(
+                          color: OpperColors.unselected,
+                          blurRadius: 2.0,
+                          spreadRadius: 2.0,
+                        ),
                       ],
                       color: !widget.lockSlider
                           ? thumbColor
