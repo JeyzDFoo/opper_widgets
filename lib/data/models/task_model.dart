@@ -1,8 +1,8 @@
+import 'package:nanoid2/nanoid2.dart';
 import 'package:opper_submodule/data/calculations/time_calcs.dart';
 import 'package:opper_submodule/data/models/priority_model.dart';
 import 'package:opper_submodule/data/models/recurring.dart';
 import 'package:opper_submodule/data/models/user.dart';
-import 'package:uuid/uuid.dart';
 
 class Task {
   final String? uuid;
@@ -39,7 +39,7 @@ class Task {
       this.isComplete = false})
       : priorities =
             priorities ?? [], // Initialize priorities to an empty list if null
-        uuid = uuid ?? Uuid().v4(), // Assign uuid if not passed
+        uuid = uuid ?? nanoid(), // Assign uuid if not passed
         created = DateTime.now();
 
   Task.fromJson(Map<String, dynamic> json, OpperUser user)
