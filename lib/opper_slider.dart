@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:opper_submodule/data/calculations/time_calcs.dart';
 import 'package:opper_submodule/design/opper_colors.dart';
 
 class SliderOverlayData {
@@ -119,7 +120,7 @@ class _OpperSliderState extends State<OpperSlider> {
           sliderValue = sliderValueFromPosition(position, maxWidth);
 
           if (widget.urgencySlider == true) {
-            //  sliderLabelText = calcTimeOutFromUrgency(sliderValue);
+            sliderLabelText = calcTimeOutFromUrgency(sliderValue);
           } else {
             sliderLabelText = (sliderValue * 0.1).toStringAsFixed(1);
           }

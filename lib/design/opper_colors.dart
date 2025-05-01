@@ -4,6 +4,7 @@ class OpperColors {
   static const Color purple = Color.fromARGB(255, 133, 69, 133);
   static const Color unselected = Color.fromARGB(255, 60, 60, 60);
   static const Color seedColor = Color.fromRGBO(251, 227, 255, 1);
+  static const Color secondaryBackground = Color.fromARGB(255, 49, 49, 49);
 }
 
 class AlignColors {
