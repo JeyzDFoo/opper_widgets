@@ -18,9 +18,8 @@ class _ImpactSliderState extends State<ImpactSlider> {
 
   @override
   Widget build(BuildContext context) {
-    print("Impact Slider: ${widget.priority.impact}");
     return OpperSlider(
-        sliderValue: widget.priority.impact ??= 50,
+        sliderValue: widget.priority.impact ??= 20,
         minValue: 0,
         maxValue: 100,
         onChanged: (value) {
