@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'user.dart';
+import 'package:opper_submodule/data/models/user.dart';
 
 class OpperPriority {
   double? impact;
