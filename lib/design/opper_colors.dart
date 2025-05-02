@@ -20,7 +20,9 @@ class AlignColors {
   static const Color color10 = Color(0xFF008080); // Teal
   static const Color color11 = Color(0xFFFFC0CB); // Pink (replacing Maroon)
   static const Color color12 = Color(0xFFADD8E6); // LightBlue (replacing Navy)
-
+  static const Color color13 = Color(0xFFB0E0E6); // PowderBlue
+  static const Color color14 = Color(0xFFFA8072); // Salmon
+  static const Color color15 = Color(0xFFF4A460); // SandyBrown
   static const Color color16 =
       Color(0xFFAFEEEE); // PaleTurquoise (replacing CadetBlue)
   static const Color color17 = Color(0xFF7FFF00); // Chartreuse
@@ -40,6 +42,7 @@ class AlignColors {
   static const Color color30 = Color(0xFFFFE4B5); // Moccasin
 
   static Color? getColorByIndex(int index) {
+    index = (index % 30) + 1; // Loop back to the first index if greater than 29
     final colors = [
       color1,
       color2,
@@ -53,7 +56,9 @@ class AlignColors {
       color10,
       color11,
       color12,
-      // Skipping undefined indices like 13, 14, 15
+      color13,
+      color14,
+      color15,
       color16,
       color17,
       color18,
@@ -70,6 +75,6 @@ class AlignColors {
       color29,
       color30,
     ];
-    return (index >= 1 && index <= colors.length) ? colors[index - 1] : null;
+    return colors[index - 1];
   }
 }
