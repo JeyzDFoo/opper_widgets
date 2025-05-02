@@ -186,24 +186,16 @@ class _OpperSliderState extends State<OpperSlider> {
               if (widget.overlayValues != null && widget.showOverlay == true)
                 for (var otherValue in widget.overlayValues!)
                   Positioned(
-                      left: positionFromSliderValue(otherValue.value, maxWidth),
-                      top: (constraints.maxHeight) / 2 - thumbSize * 0.12 - 5,
-                      // Center vertically
-                      child: Container(
-                        width: thumbSize * 0.12,
-                        height: thumbSize * 0.12,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AlignColors.getColorByIndex(
-                                widget.overlayValues!.indexOf(otherValue)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: otherValue.color.withAlpha(100),
-                                blurRadius: 6.0,
-                                spreadRadius: 0.0,
-                              ),
-                            ]),
-                      )),
+                    left: positionFromSliderValue(otherValue.value, maxWidth),
+                    top: (constraints.maxHeight) / 2 - thumbSize * 0.12 - 5,
+                    // Center vertically
+                    child: Container(
+                      width: thumbSize * 0.12,
+                      height: thumbSize * 0.12,
+                      // decoration: BoxDecoration(
+                      //     shape: BoxShape.circle, color: otherValue.color),
+                    ),
+                  ),
               Positioned(
                 left: position,
                 top: (constraints.maxHeight) / 2, // Center vertically
@@ -241,13 +233,6 @@ class _OpperSliderState extends State<OpperSlider> {
                     width: thumbSize, // Set the desired width
                     height: thumbSize, // Set the desired height
                     decoration: BoxDecoration(
-                      boxShadow: [
-                        // BoxShadow(
-                        //   color: seedColor,
-                        //   blurRadius: 6.0,
-                        //   spreadRadius: 0.0,
-                        // ),
-                      ],
                       color: !widget.lockSlider
                           ? thumbColor
                           : OpperColors.unselected,
