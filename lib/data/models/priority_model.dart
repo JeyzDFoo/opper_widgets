@@ -17,9 +17,13 @@ class OpperPriority {
   double? get priority => _calcPriority(impact, effort, urgency);
 
   static double? _calcPriority(double? i, double? e, double? u) {
-    if (i == null || e == null || u == null) {
+    if (i == null && e == null && u == null) {
       return null;
     }
+
+    i ??= 50;
+    e ??= 50;
+    u ??= 50;
 
     if (i <= 0 || e >= 100 || u <= 0) {
       return 0;
