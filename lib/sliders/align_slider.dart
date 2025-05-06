@@ -79,7 +79,7 @@ class _AlignSliderState extends State<AlignSlider> {
           break;
       }
 
-      Color color = AlignColors.getColorByIndex(i) ?? OpperColors.seedColor;
+      Color color = AlignColors.getColorByIndex(i);
       overlayData.add(SliderOverlayData(value: value, color: color));
     }
     return overlayData;
