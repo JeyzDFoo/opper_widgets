@@ -5,14 +5,15 @@ class SurveyModel {
   final String? uuid;
   Task? task;
   final int? responseCount;
+  final bool processed;
   List<String>? emailList;
 
-  SurveyModel({
-    this.uuid,
-    this.task,
-    this.responseCount,
-    this.emailList,
-  });
+  SurveyModel(
+      {this.uuid,
+      this.task,
+      this.responseCount,
+      this.emailList,
+      this.processed = false});
 
   factory SurveyModel.fromJson(Map<String, dynamic> json, OpperUser user) {
     return SurveyModel(
@@ -22,6 +23,7 @@ class SurveyModel {
       emailList: json['emailList'] != null
           ? List<String>.from(json['emailList'])
           : null,
+      processed: json['processed'] ?? false, // Default to false if not present
     );
   }
 
@@ -31,6 +33,7 @@ class SurveyModel {
       'task': task?.toJson(user),
       'responseCount': responseCount,
       'emailList': emailList != null ? List<String>.from(emailList!) : null,
+      'processed': processed,
     };
   }
 }
