@@ -5,13 +5,13 @@ class SurveyModel {
   final String? uuid;
   Task? task;
   final int? responseCount;
-  final DateTime? timeout;
+  List<String>? emailList;
 
   SurveyModel({
     this.uuid,
     this.task,
     this.responseCount,
-    this.timeout,
+    this.emailList,
   });
 
   factory SurveyModel.fromJson(Map<String, dynamic> json, OpperUser user) {
@@ -19,7 +19,9 @@ class SurveyModel {
       uuid: json['uuid'],
       task: json['task'] != null ? Task.fromJson(json['task'], user) : null,
       responseCount: json['responseCount'],
-      timeout: json['timeout'] != null ? DateTime.parse(json['timeout']) : null,
+      emailList: json['emailList'] != null
+          ? List<String>.from(json['emailList'])
+          : null,
     );
   }
 
@@ -28,7 +30,7 @@ class SurveyModel {
       'uuid': uuid,
       'task': task?.toJson(user),
       'responseCount': responseCount,
-      'timeout': timeout?.toIso8601String(),
+      'emailList': emailList != null ? List<String>.from(emailList!) : null,
     };
   }
 }
